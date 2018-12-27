@@ -1,10 +1,12 @@
 <h2>My Recipes</h2>
 <ul class="recipes">
-    <li *ngFor="let recipe of recipe" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+    <li *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
         <span class="badge">{{recipe.id}}</span> {{recipe.name}}
     </li>
 </ul>
-<div *ngIf="selectedRecipe">
+
+<app-recipes-details [recipe]="selectedRecipe"></app-recipes-details>
+<!-- <div *ngIf="selectedRecipe">
     <h2>My Recipes</h2>
     <div><span>id: </span>{{selectedRecipe.id}}</div>
     <div>
@@ -12,4 +14,4 @@
           <input [(ngModel)]="selectedRecipe.name" placeholder="name">
         </label>
     </div>
-</div>
+</div> -->
