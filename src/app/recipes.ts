@@ -1,4 +1,4 @@
-export class Recipe {
+export interface IRecipes {
   id: Number;
   name: String;
   ingredients: String;
