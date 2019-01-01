@@ -1,10 +1,18 @@
 <div *ngIf="recipe">
-    <h2>{{recipe.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{recipe.id}}</div>
-    <label>
-      <span>nazwa: </span>{{recipe.name}}
-    </label>
-    <div><span>składniki: </span>{{recipe.ingredients}}</div>
-    <div><span>przygotowanie: </span> {{recipe.description}}</div>
-    <div><span>koszt: </span> {{recipe.price}}</div>
+    <h2>{{recipe.name | uppercase}} Szczegóły</h2>
+    <div id='id'><span>id: </span>{{recipe.id}}</div>
+    <div id='name'><span>nazwa: </span>{{recipe.name}}</div>
+    <div id='ingredients'><span>składniki: </span>{{recipe.ingredients}}</div>
+    <div id='description'><span>przygotowanie: </span> {{recipe.description}} </div>
+    <div id='price'><span>koszt: </span> {{recipe.price}}</div>
+    <button type="button" class="btn btn-primary" (click)="deleteData(recipe.name)">Usun przepis</button>
+    <button id="btn1" type="button" class="btn btn-primary" (click)="changeHTML()">Zmien</button>
+    <div *ngIf="enableEdit">
+        <div id='id'><span>id: </span>{{recipe.id}}</div>
+        <div id='name'><span>nazwa: </span><input #newName type="text" value={{recipe.name}}></div>
+        <div id='ingredients'><span>składniki: </span><input #newIngr type="text" value={{recipe.ingredients}}></div>
+        <div id='description'><span>przygotowanie: </span><input #newDesc type="text" value={{recipe.description}}> </div>
+        <div id='price'><span>koszt: </span><input #newPrice type="text" value={{recipe.price}}></div>
+        <button id="save" type="button" class="btn btn-primary" (click)="changeData(recipe.name,newName.value,newIngr.value,newDesc.value,newPrice.value,recipe.id)">Zapisz zmiany</button>
+    </div>
 </div>

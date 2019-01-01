@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { IRecipes } from '../recipes';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes-details',
@@ -8,10 +9,22 @@ import { IRecipes } from '../recipes';
 })
 export class RecipesDetailsComponent implements OnInit {
   @Input() recipe: IRecipes;
+  enableEdit = false;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
+  deleteData(name) {
+    this.recipeService.deleteData(name);
+  }
+
+  changeHTML() {
+    this.enableEdit = true;
+  }
+  changeData(oldName, newName, newIngr, newDesc, newPrice, oldId) {
+    this.recipeService.changeData(oldName, newName, newIngr, newDesc, newPrice, oldId);
+    // console.log(oldName, newName, newIngr, newDesc, newPrice);
+  }
 }

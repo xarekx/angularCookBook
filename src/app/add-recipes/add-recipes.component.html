@@ -1,7 +1,7 @@
 <h2>Dodaj Przepis</h2>
-<label><div>nazwa: </div></label><br/>
-<label><div>składniki: </div></label><br/>
-<label><div>przygotowanie: </div></label><br/>
-<label><div>koszt: </div></label><br/>
+<label><div>nazwa: <input #name type="text" placeholder="nazwa" > </div></label><br/>
+<label><div>składniki: <input #ingredients type="text" placeholder="składniki"> </div></label><br/>
+<label><div>przygotowanie: <input #description type="text" placeholder="przygotowanie"> </div></label><br/>
+<label><div>koszt: <input #price type="number" placeholder="koszt"> </div></label><br/>
 <br>
-<button type="button" class="btn btn-primary" (click)="postData()">Dodaj Przepis !</button>
+<button type="button" class="btn btn-primary" (click)="postData(name.value, ingredients.value, description.value, price.value)">Dodaj Przepis !</button>

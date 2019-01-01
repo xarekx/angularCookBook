@@ -8,13 +8,18 @@ import { RecipeService } from '../recipe.service';
 })
 export class AddRecipesComponent implements OnInit {
 
+    nazwa: String;
+    skladniki: String;
+    przygotowanie: String;
+    kwota: Number;
+
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
 
-  postData() {
-    this.recipeService.postData();
+  postData(name, ingr , desc, price: number) {
+    this.recipeService.postData(name, ingr, desc, price);
   }
 
 }
