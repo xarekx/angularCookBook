@@ -1,3 +1,26 @@
 h1 {
     text-align: center;
 }
+
+nav {
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav>.navItem {
+    float: right;
+}
+
+nav>.navItem>a:hover {
+    color: green;
+}

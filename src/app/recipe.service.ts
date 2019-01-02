@@ -10,6 +10,7 @@ export class RecipeService {
 
   private url = 'http://angularproject.getsandbox.com/recipes';
   body = {};
+  id: number;
   constructor(private http: HttpClient) { }
 
   getData(): Observable<IRecipes[]> {
@@ -41,7 +42,6 @@ export class RecipeService {
       description : newDesc,
       price : newPrice,
     };
-    console.log(this.body);
     // console.log(oldname, newname, newIngr, newDesc, newPrice);
     this.http.put((this.url + '/' + oldname), this.body ).subscribe((data: any) => {
       console.log(data);

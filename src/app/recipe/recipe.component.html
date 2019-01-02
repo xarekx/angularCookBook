@@ -1,6 +1,14 @@
-<h2>My Recipes</h2>
-<ul *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
-    <li>{{recipe.name}}</li>
-</ul>
+<div class="bodyRecipes">
+    <h2>Moje Przepisy</h2>
+    <div class="bodyItem">
+        <ul *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+            <div class="listItem">
+                <li>{{recipe.name}}</li>
+            </div>
+        </ul>
 
-<app-recipes-details [recipe]="selectedRecipe"></app-recipes-details>
+    </div>
+</div>
+<div class="selectedItem">
+    <app-recipes-details [recipe]="selectedRecipe"></app-recipes-details>
+</div>

@@ -1,0 +1,48 @@
+.bodyRecipes {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 1200px;
+}
+
+h2 {
+    background-color: antiquewhite;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 0;
+}
+
+.bodyItem {
+    border: 1px solid black;
+    padding-top: 5px;
+    margin: 0;
+    background-color: bisque;
+}
+
+.bodyItem>ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    width: 100px;
+    color: white;
+    cursor: pointer;
+}
+
+.bodyItem>ul:hover {
+    color: gray;
+}
+
+.listItem {
+    background-color: brown;
+    font-size: 1.2em;
+    width: 150px;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.selectedItem {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}

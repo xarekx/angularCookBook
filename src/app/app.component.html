@@ -1,6 +1,8 @@
-<h1>{{title}}</h1>
 <nav>
-    <a routerLink="/recipe">Recipes</a><br>
-    <a routerLink="/add-recipes">Add Recipe</a>
+    {{title}}
+    <div class="navItem">
+        <a routerLink="/recipe">Moje Przepisy</a>
+        <a routerLink="/add-recipes">Dodaj Przepis</a>
+    </div>
 </nav>
 <router-outlet></router-outlet>

@@ -1,18 +1,22 @@
 <div *ngIf="recipe">
-    <h2>{{recipe.name | uppercase}} Szczegóły</h2>
-    <div id='id'><span>id: </span>{{recipe.id}}</div>
-    <div id='name'><span>nazwa: </span>{{recipe.name}}</div>
-    <div id='ingredients'><span>składniki: </span>{{recipe.ingredients}}</div>
-    <div id='description'><span>przygotowanie: </span> {{recipe.description}} </div>
-    <div id='price'><span>koszt: </span> {{recipe.price}}</div>
-    <button type="button" class="btn btn-primary" (click)="deleteData(recipe.name)">Usun przepis</button>
-    <button id="btn1" type="button" class="btn btn-primary" (click)="changeHTML()">Zmien</button>
+    <div class="recipeName">
+        <h2>{{recipe.name | uppercase}}</h2>
+    </div>
+    <div class="recipeData">
+        <div id='name'><span>nazwa: </span>{{recipe.name}}</div>
+        <div id='ingredients'><span>składniki: </span>{{recipe.ingredients}}</div>
+        <div id='description'><span>przygotowanie: </span> {{recipe.description}} </div>
+        <div id='price'><span>koszt: </span> {{recipe.price}}</div>
+        <button type="button" class="btn btn-primary" (click)="deleteData(recipe.name)">Usun przepis</button>
+        <button id="btn1" type="button" class="btn btn-primary" (click)="changeHTML()">Zmien</button>
+    </div>
     <div *ngIf="enableEdit">
-        <div id='id'><span>id: </span>{{recipe.id}}</div>
-        <div id='name'><span>nazwa: </span><input #newName type="text" value={{recipe.name}}></div>
-        <div id='ingredients'><span>składniki: </span><input #newIngr type="text" value={{recipe.ingredients}}></div>
-        <div id='description'><span>przygotowanie: </span><input #newDesc type="text" value={{recipe.description}}> </div>
-        <div id='price'><span>koszt: </span><input #newPrice type="text" value={{recipe.price}}></div>
-        <button id="save" type="button" class="btn btn-primary" (click)="changeData(recipe.name,newName.value,newIngr.value,newDesc.value,newPrice.value,recipe.id)">Zapisz zmiany</button>
+        <div class="editData">
+            <div id='name1'><span>nazwa: </span><input #newName type="text" value={{recipe.name}}></div>
+            <div id='ingredients1'><span>składniki: </span><input #newIngr type="text" value={{recipe.ingredients}}></div>
+            <div id='description1'><span>przygotowanie: </span><input #newDesc type="text" value={{recipe.description}}> </div>
+            <div id='price1'><span>koszt: </span><input #newPrice type="text" value={{recipe.price}}></div>
+            <button id="save" type="button" class="btn btn-primary" (click)="changeData(recipe.name,newName.value,newIngr.value,newDesc.value,newPrice.value,recipe.id)">Zapisz zmiany</button>
+        </div>
     </div>
 </div>
